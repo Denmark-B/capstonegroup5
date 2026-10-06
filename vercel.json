@@ -1,0 +1,112 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/lostandfound.html"
+    },
+    {
+      "source": "/backend/Api.php",
+      "destination": "https://YOUR-PHP-HOST.com/backend/Api.php"
+    },
+    {
+      "source": "/backend/Account.php",
+      "destination": "https://YOUR-PHP-HOST.com/backend/Account.php"
+    },
+    {
+      "source": "/backend/ResetPassword.php",
+      "destination": "https://YOUR-PHP-HOST.com/backend/ResetPassword.php"
+    },
+    {
+      "source": "/backend/Email.php",
+      "destination": "https://YOUR-PHP-HOST.com/backend/Email.php"
+    },
+    {
+      "source": "/backend/Checkout.php",
+      "destination": "https://YOUR-PHP-HOST.com/backend/Checkout.php"
+    },
+    {
+      "source": "/backend/PasswordReset.php",
+      "destination": "https://YOUR-PHP-HOST.com/backend/PasswordReset.php"
+    },
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://YOUR-PHP-HOST.com/uploads/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "same-origin"
+        }
+      ]
+    },
+    {
+      "source": "/backend/Api.php",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/backend/Account.php",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/backend/PasswordReset.php",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/backend/Checkout.php",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/backend/Email.php",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/backend/ResetPassword.php",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ]
+}
